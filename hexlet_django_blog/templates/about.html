@@ -10,5 +10,12 @@
     <h1>О блоге</h1>
     <p>Эксперименты с Django на Хекслете</p>
     <p>{{ tags|join:', ' }}</p>
+
+    <p>Список наших сотрудников</p>
+    <ul>
+        {% for coworker in TEAM %}
+            <li>{{ coworker.name }} - {{ coworker.position }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
