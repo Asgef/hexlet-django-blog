@@ -4,5 +4,5 @@ from .views import ArticlePageView
 
 
 urlpatterns = [
-    path('', ArticlePageView.as_view(), name='articles_index'),
+    path('<str:tags>/<int:article_id>/', ArticlePageView.as_view(), name='article'),
 ]
