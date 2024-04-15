@@ -28,7 +28,3 @@ def about(request):
         'about.html',
         context={'tags': tags, 'TEAM': TEAM},
     )
-
-
-def redirect_to_articles(request):
-    return redirect('article', tags='python', article_id=42)
