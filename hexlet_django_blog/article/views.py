@@ -93,8 +93,8 @@ class ArticleFormEditView(View):
 class ArticleFormDeleteView(View):
     def post(self, request, *args, **kwargs):
         article_id = kwargs.get('id')
-        article = Article.object.get(id=article_id)
+        article = Article.objects.get(id=article_id)
         if article:
             article.delete()
             messages.add_message(request, messages.SUCCESS, f"Статья: {article.name} удалена")
-        return redirect('article')
+        return redirect('articles')
